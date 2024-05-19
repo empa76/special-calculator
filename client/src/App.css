@@ -1,0 +1,110 @@
+.app {
+  width: 100%;
+  display: grid;
+  grid-gap: 0;
+  /* grid-template-columns: 20% auto; */
+  grid-template-areas:
+    'header'
+    'sidebar'
+    'main';
+
+  .header {
+    grid-area: header;
+    border-bottom: 1px solid #aaa;
+    padding-left: var(--padding-content);
+    padding-right: var(--padding-content);
+
+    h1 {
+      font-size: var(--font-big);
+      margin: 0.25 rem;
+    }
+  }
+
+  .price-tables {
+    border-bottom: 1px solid #aaa;
+    grid-area: sidebar;
+    padding-left: var(--padding-content);
+    padding-right: var(--padding-content);
+
+    table {
+      width: 100%;
+      text-align: left;
+
+      td:first-of-type {
+        width: 20%;
+      }
+    }
+  }
+
+  .calculator {
+    grid-area: main;
+    padding-left: var(--padding-content);
+    padding-right: var(--padding-content);
+
+    button {
+      background-color: #428bdf;
+      color: white;
+      width: 100%;
+    }
+
+    input[type='text'] {
+      border: 1px solid var(--border-color-valid);
+      border-radius: 5px;
+      color: var(--text-color);
+      font-size: var(--font-small);
+      max-width: 100%;
+      padding: var(--padding-inputs);
+      width: 100%;
+
+      &::placeholder {
+        color: #bbb;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input[aria-invalid='false'] {
+      color: var(--text-color)
+      border-color: var(--border-color-valid);
+    }
+
+    input[aria-invalid='true'] {
+      color: var(--border-color-invalid);
+      border-color: var(--border-color-invalid);
+
+      & + p {
+        color: var(--border-color-invalid);
+      }
+    }
+
+    h3 {
+      font-size: var(--font-medium);
+      margin: 0.5rem 0;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    grid-template-areas:
+      'header header'
+      'sidebar main';
+    grid-template-columns: 20% auto;
+
+    .header, .price-tables, .calculator {
+      padding-left: calc(var(--padding-content) * 2);
+      padding-right: calc(var(--padding-content) * 2);
+    }
+
+    .price-tables {
+      border-bottom: none;
+    }
+
+    .calculator {
+      h3 {
+        padding: var(--padding-content) 0;
+        font-size: var(--font-big);
+      }
+    }
+  }
+}
