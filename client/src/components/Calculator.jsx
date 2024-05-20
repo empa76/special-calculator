@@ -33,6 +33,7 @@ export default function Calculator({ totalAmountA, totalAmountB }) {
           placeholder="Example: A+B"
           maxLength="3"
           autoComplete="off"
+          data-testid='formula-input'
         />
         <p>{errors.formula?.message}</p>
         <button type="submit">Calculate</button>

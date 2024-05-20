@@ -2,7 +2,7 @@ jest.mock('../constants', () => ({ API_URL: 'http://mocked-api-url' }))
 
 describe('documentService', () => {
   test('fetchDocument should return data from API', async () => {
-    const data = { body: 'AcimaTestData' }
+    const data = { body: 'ATestData' }
     global.fetch = jest.fn().mockResolvedValue({ ok: true, json: () => data })
 
     const { fetchDocument } = require('./documentService')
