@@ -24,7 +24,7 @@ export default function Calculator({ totalAmountA, totalAmountB }) {
             required: 'Formula is required.',
             maxLength: { value: 3, message: 'Formula is too long!' },
             pattern: {
-              value: /^[AB]{1}$|^[AB]{1}[+|\-|*|/]?[AB]+$/,
+              value: /^[AB]{1}$|^[AB]{1}[+|\-|*|\/]+[AB]+$/,
               message: 'Invalid entry! Please try again.',
             },
           })}
