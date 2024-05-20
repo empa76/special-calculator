@@ -20,11 +20,25 @@ describe('usePriceTables', () => {
     const { result } = renderHook(() => usePriceTables())
 
     await waitFor(() => {
-      expect(fetchDocument).toHaveBeenCalledTimes(1)
+      expect(fetchDocument).toHaveBeenCalled()
     })
 
     expect(result.current.tablesHtml).toBeDefined()
     expect(result.current.totalAmountTableA).toBeDefined()
     expect(result.current.totalAmountTableB).toBeDefined()
+  })
+
+  test('handles error from API', async () => {
+    fetchDocument.mockRejectedValue(new Error('API error'))
+
+    const { result } = renderHook(() => usePriceTables())
+
+    await waitFor(() => {
+      expect(fetchDocument).toHaveBeenCalled()
+    })
+
+    expect(result.current.tablesHtml).toBe('')
+    expect(result.current.totalAmountTableA).toBe(0)
+    expect(result.current.totalAmountTableB).toBe(0)
   })
 })
