@@ -7,7 +7,7 @@ import calculate from './calculate'
 jest.mock('../utils/calculate', () => {
   return {
     __esModule: true,
-    default: jest.fn()
+    default: jest.fn(),
   }
 })
 

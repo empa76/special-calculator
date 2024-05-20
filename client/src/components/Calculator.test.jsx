@@ -7,7 +7,7 @@ import calculate from '../utils/calculate'
 jest.mock('../utils/calculate', () => {
   return {
     __esModule: true,
-    default: jest.fn()
+    default: jest.fn(),
   }
 })
 
@@ -23,13 +23,15 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$3.00')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$3.00')).toBeInTheDocument()
+    })
     expect(screen.getByText('$3.00')).toBeInTheDocument()
   })
 
   test('Displays calculated result based on entered formula B+A', async () => {
     calculate.mockReturnValue(5.15)
-    act(() => render(<Calculator totalAmountA={1.40} totalAmountB={3.75} />))
+    act(() => render(<Calculator totalAmountA={1.4} totalAmountB={3.75} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
 
@@ -38,7 +40,9 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$5.15')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$5.15')).toBeInTheDocument()
+    })
     expect(screen.getByText('$5.15')).toBeInTheDocument()
   })
 
@@ -53,7 +57,9 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$1.00')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$1.00')).toBeInTheDocument()
+    })
     expect(screen.getByText('$1.00')).toBeInTheDocument()
   })
 
@@ -68,7 +74,9 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$1.75')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$1.75')).toBeInTheDocument()
+    })
     expect(screen.getByText('$1.75')).toBeInTheDocument()
   })
 
@@ -83,13 +91,15 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$6.00')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$6.00')).toBeInTheDocument()
+    })
     expect(screen.getByText('$6.00')).toBeInTheDocument()
   })
 
   test('Displays calculated result based on entered formula B*A', async () => {
-    calculate.mockReturnValue(4.50)
-    act(() => render(<Calculator totalAmountA={3} totalAmountB={1.50} />))
+    calculate.mockReturnValue(4.5)
+    act(() => render(<Calculator totalAmountA={3} totalAmountB={1.5} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
 
@@ -98,7 +108,9 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$4.50')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$4.50')).toBeInTheDocument()
+    })
     expect(screen.getByText('$4.50')).toBeInTheDocument()
   })
 
@@ -113,7 +125,9 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$1.50')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$1.50')).toBeInTheDocument()
+    })
     expect(screen.getByText('$1.50')).toBeInTheDocument()
   })
 
@@ -128,7 +142,9 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$2.00')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$2.00')).toBeInTheDocument()
+    })
     expect(screen.getByText('$2.00')).toBeInTheDocument()
   })
 
@@ -143,7 +159,9 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$3.00')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$3.00')).toBeInTheDocument()
+    })
     expect(screen.getByText('$3.00')).toBeInTheDocument()
   })
 
@@ -158,11 +176,13 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('$2.00')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('$2.00')).toBeInTheDocument()
+    })
     expect(screen.getByText('$2.00')).toBeInTheDocument()
   })
 
-  it ('Displays error message when formula is too long', async () => {
+  it('Displays error message when formula is too long', async () => {
     act(() => render(<Calculator totalAmountA={3} totalAmountB={2} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -172,11 +192,13 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('Formula is too long!')).toBeInTheDocument() })
+    await waitFor(() => {
+      expect(screen.getByText('Formula is too long!')).toBeInTheDocument()
+    })
     expect(screen.getByText('Formula is too long!')).toBeInTheDocument()
   })
 
-  it ('Displays error message when formula is invalid', async () => {
+  it('Displays error message when formula is invalid', async () => {
     act(() => render(<Calculator totalAmountA={3} totalAmountB={2} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -186,7 +208,13 @@ describe('Calculator', () => {
       fireEvent.click(button)
     })
 
-    await waitFor(() => { expect(screen.getByText('Invalid entry! Please try again.')).toBeInTheDocument() })
-    expect(screen.getByText('Invalid entry! Please try again.')).toBeInTheDocument()
+    await waitFor(() => {
+      expect(
+        screen.getByText('Invalid entry! Please try again.'),
+      ).toBeInTheDocument()
+    })
+    expect(
+      screen.getByText('Invalid entry! Please try again.'),
+    ).toBeInTheDocument()
   })
 })
