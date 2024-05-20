@@ -113,9 +113,7 @@
   }
 
   @media only screen and (min-width: 1400px) {
-    grid-template-areas:
-    'header header header'
-    'sidebar main';
-    grid-template-columns: 20em 68em auto ;
+    margin: 0 auto;
+    max-width: 1400px;
   }
 }
