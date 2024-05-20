@@ -3,16 +3,17 @@ import calculate from './calculate'
 // mock calculate from calculateService
 // due jest issues with transformation fparser by babel while running tests
 
-jest.mock('./calculate', () => {
-  return jest.fn().mockImplementation(() => 15)
+// mock calculate from calculateService due jest issues with transformation fparser by babel while running tests
+jest.mock('../utils/calculate', () => {
+  return {
+    __esModule: true,
+    default: jest.fn()
+  }
 })
 
 describe('calculation valid formula', () => {
-  beforeEach(() => {
-    calculate.mockClear()
-  })
-
   test('should correctly calculate formula', () => {
+    calculate.mockReturnValue(15)
     const formulaValue = 'A + B'
     const amountA = 5
     const amountB = 10

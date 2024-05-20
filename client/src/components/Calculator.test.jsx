@@ -13,7 +13,7 @@ jest.mock('../utils/calculate', () => {
 
 describe('Calculator', () => {
   test('Displays calculated result based on entered formula A+B', async () => {
-    calculate.mockImplementation(() => 3)
+    calculate.mockReturnValue(3)
     act(() => render(<Calculator totalAmountA={1} totalAmountB={2} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -28,7 +28,7 @@ describe('Calculator', () => {
   })
 
   test('Displays calculated result based on entered formula B+A', async () => {
-    calculate.mockImplementation(() => 5.15)
+    calculate.mockReturnValue(5.15)
     act(() => render(<Calculator totalAmountA={1.40} totalAmountB={3.75} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -43,7 +43,7 @@ describe('Calculator', () => {
   })
 
   test('Displays calculated result based on entered formula A-B', async () => {
-    calculate.mockImplementation(() => 1)
+    calculate.mockReturnValue(1)
     act(() => render(<Calculator totalAmountA={3} totalAmountB={2} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -58,7 +58,7 @@ describe('Calculator', () => {
   })
 
   test('Displays calculated result based on entered formula B-A', async () => {
-    calculate.mockImplementation(() => 1.75)
+    calculate.mockReturnValue(1.75)
     act(() => render(<Calculator totalAmountA={3} totalAmountB={1.25} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -73,7 +73,7 @@ describe('Calculator', () => {
   })
 
   test('Displays calculated result based on entered formula A*B', async () => {
-    calculate.mockImplementation(() => 6)
+    calculate.mockReturnValue(6)
     act(() => render(<Calculator totalAmountA={3} totalAmountB={2} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -88,7 +88,7 @@ describe('Calculator', () => {
   })
 
   test('Displays calculated result based on entered formula B*A', async () => {
-    calculate.mockImplementation(() => 4.50)
+    calculate.mockReturnValue(4.50)
     act(() => render(<Calculator totalAmountA={3} totalAmountB={1.50} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -103,7 +103,7 @@ describe('Calculator', () => {
   })
 
   test('Displays calculated result based on entered formula A/B', async () => {
-    calculate.mockImplementation(() => 1.5)
+    calculate.mockReturnValue(1.5)
     act(() => render(<Calculator totalAmountA={3} totalAmountB={2} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -118,7 +118,7 @@ describe('Calculator', () => {
   })
 
   test('Displays calculated result based on entered formula B/A', async () => {
-    calculate.mockImplementation(() => 2)
+    calculate.mockReturnValue(2)
     act(() => render(<Calculator totalAmountA={5} totalAmountB={10} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -133,7 +133,7 @@ describe('Calculator', () => {
   })
 
   test('Displays calculated result based on entered formula A', async () => {
-    calculate.mockImplementation(() => 3)
+    calculate.mockReturnValue(3)
     act(() => render(<Calculator totalAmountA={3} totalAmountB={2} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
@@ -148,7 +148,7 @@ describe('Calculator', () => {
   })
 
   test('Displays calculated result based on entered formula B', async () => {
-    calculate.mockImplementation(() => 2)
+    calculate.mockReturnValue(2)
     act(() => render(<Calculator totalAmountA={3} totalAmountB={2} />))
     const input = screen.getByTestId('formula-input')
     const button = screen.getByText('Calculate')
