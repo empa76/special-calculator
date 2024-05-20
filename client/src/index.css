@@ -12,11 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  --font-big: 3em;
-  --font-medium: 2.5em;
+  --font-big: 2.75em;
+  --font-medium: 2em;
   --font-small: 1.5em;
-  --padding-content: 1rem;
-  --padding-inputs: 0.75rem;
+  --padding-content: 1em;
+  --padding-inputs: 0.5em;
   --text-color: #333;
   --border-color-valid: #777;
   --border-color-invalid: red;
@@ -43,12 +43,13 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 1.25em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  padding: var(--padding-inputs);
 }
 button:hover {
   border-color: #003d82;
