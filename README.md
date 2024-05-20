@@ -92,3 +92,6 @@ npm test
 
 You can use *devcontainers* to run the project in a containerized environment. The project has a devcontainer configuration that will automatically install the required dependencies and run the project. See [Devcontainers documentation](https://code.visualstudio.com/docs/remote/containers) for more information.
 
+### Known Issues
+
+- Safari browser prior to version 17.4.1 does not render CSS properly for text inputs, therefore the application will work correctly but with a different styles.
