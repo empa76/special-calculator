@@ -63,12 +63,16 @@ npm install
 
 ### Server
 
+Notice: server will use PORT 3000, so make sure it is available.
+
 ```bash
 cd server
 npm start
 ```
 
 ### Client
+
+Notice: client will use PORT 5173, so make sure it is available.
 
 ```bash
 cd client
