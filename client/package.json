@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "Marek Palewski",
+  "description": "A Vite + React project for Ledger Calculator",
   "scripts": {
     "dev": "vite",
     "start": "vite",
