@@ -1,9 +1,9 @@
-import calculate from './calculateService'
+import calculate from './calculate'
 
 // mock calculate from calculateService
 // due jest issues with transformation fparser by babel while running tests
 
-jest.mock('./calculateService', () => {
+jest.mock('./calculate', () => {
   return jest.fn().mockImplementation(() => 15)
 })
 

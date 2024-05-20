@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import calculate from '../services/calculateService'
+import calculate from '../utils/calculate'
 
 export default function Calculator({ totalAmountA, totalAmountB }) {
   const [result, setResult] = useState(0)

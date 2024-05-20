@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { fetchDocument } from '../services/documentService'
-import { extractTablesData } from '../services/priceTableService'
+import { extractTablesData } from '../utils/priceTableData'
 
 export default function usePriceTables() {
   const [tablesHtml, setTablesHtml] = useState('')

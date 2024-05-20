@@ -41,7 +41,7 @@ describe('priceTableService', () => {
       </table>
     `.replace(/\s+/g, '')
 
-    const { extractTablesData } = require('./priceTableService')
+    const { extractTablesData } = require('./priceTableData')
     const { totalA, totalB, tableHtml } = extractTablesData(html)
 
     expect(totalA).toBe(13.5)
